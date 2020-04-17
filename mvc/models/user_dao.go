@@ -14,9 +14,7 @@ var (
 )
 
 func GetUser(user_id int64) (*User, *utils.ApplicationError) {
-	fmt.Println("User details : ", user[user_id])
 	if userInfo := user[user_id]; userInfo == nil {
-		fmt.Println("UserInfo : ", userInfo)
 		errorData := &utils.ApplicationError{
 			Message:   fmt.Sprintf("User %d was not found", user_id),
 			ErrorCode: http.StatusNotFound,
